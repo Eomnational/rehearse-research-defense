@@ -1,0 +1,13 @@
+interface:
+  display_name: 研究计划答辩训练
+  short_description: 围绕研究计划准备自然的中英双语逐字稿、简洁口试回答与连续追问
+  default_prompt: 使用 $rehearse-research-defense，依据我的研究计划准备中英双语逐字稿、教授可能追问和适合背诵的简洁回答。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

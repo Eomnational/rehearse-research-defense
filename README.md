@@ -1,2 +1,92 @@
-# rehearse-research-defense
-A reusable AI skill for research proposal interviews: bilingual scripts, concise oral answers, and professor follow-up practice. 研究计划答辩训练技能。
+# Research Defense Rehearsal · 研究计划答辩训练
+
+Prepare natural bilingual speaking scripts, concise oral answers, and realistic follow-up practice from your research proposal.
+
+围绕研究计划（RP）生成自然的中英双语逐字稿、教授可能追问与适合背诵的简洁回答。适用于研究生申请面谈、研究计划汇报和口试答辩，可用于 NAIST 及其他学校与研究方向。
+
+## Features · 功能
+
+- **双语逐字稿**：英文可直接口述，中文逐段对应，包含自然转场和时间安排。
+- **问题预测**：从当前 RP 的具体选择、实验设计和薄弱环节预测问题。
+- **分层回答**：中文分点理解、简洁英文口答、核心题短版及连续追问。
+- **背诵辅助**：使用短句、统一术语及三个以内的记忆提示词。
+- **模拟面谈**：一次一题，依据你的回答反馈并继续追问。
+- **事实边界**：区分已完成、计划与待确认内容，避免虚构结果。
+
+## Installation · 安装
+
+本项目是 AI agent skill，不是独立运行的软件。下载仓库，将含有 `SKILL.md` 的目录放入：
+
+```text
+~/.codex/skills/rehearse-research-defense/
+```
+
+刷新支持技能发现的客户端，选择“研究计划答辩训练”，或通过 `$rehearse-research-defense` 调用。其他支持 `SKILL.md` 的客户端，请遵循其技能安装方式；文件读取、检索和导出能力取决于运行环境。
+
+## Quick Start · 快速开始
+
+提供最新版 RP，并说明面谈语言、时长和所需材料；如有 PPT 或教授邮件，可一并提供。
+
+```text
+使用 $rehearse-research-defense。
+根据我的最新版 RP 准备 10 分钟英文汇报逐字稿，每段附中文对应稿。
+再准备 20 个可能问题，给出中文答题思路和简洁英文口答，
+并对最重要的 5 个问题给出两层追问与回答。
+```
+
+### 教授定制
+
+```text
+使用 $rehearse-research-defense，依据我的 RP 和教授邮件准备面谈问题。
+重点关注方法选择、创新性、实验公平性和可行性。
+将必背短版与被追问时的展开版分开。
+```
+
+### 模拟面谈
+
+```text
+使用 $rehearse-research-defense 开始模拟答辩。
+每次只问一题，等我回答后再反馈，给我最小修改版，并继续追问。
+```
+
+### 精简背诵
+
+```text
+使用 $rehearse-research-defense，把已有口试回答改成自然短句。
+保留研究细节与事实边界，每题附一到两句短版和三个以内记忆提示词。
+```
+
+## Output · 输出结构
+
+| 材料 | 内容 |
+| --- | --- |
+| 逐字稿 | 段落或幻灯片标题、预计时间、英文口述、中文对应稿 |
+| 核心问答 | 中英问题、RP 依据、中文思路、简洁英文回答 |
+| 背诵短版 | 核心题一到两句答案及记忆提示 |
+| 连续追问 | 关键问题的两层追问及双语回答 |
+| 模拟反馈 | 准确性、逻辑、直接程度、英语可说性及最小修改 |
+
+未指定时，可暂按 10 分钟英文报告和 20 个核心问题准备。10 分钟讲稿通常以约 900–1100 英文词起草，实际时长需通过朗读校准；中文稿用于理解对照。
+
+## Workflow · 工作流程
+
+1. 读取最新 RP，梳理研究问题、方法、数据、评估与局限。
+2. 区分已有工作、计划和待确认事项，识别矛盾与缺口。
+3. 按报告时长或幻灯片组织双语逐字稿。
+4. 从具体研究选择生成问答，先直接回答，再说明理由与边界。
+5. 为关键题准备连续追问，按需开展互动模拟。
+6. 检查事实一致性、双语语义、答案长度及时间安排。
+
+## Files · 文件说明
+
+- [`SKILL.md`](SKILL.md)：触发条件与完整训练流程。
+- [`agents/openai.yaml`](agents/openai.yaml)：界面名称、简介与默认调用提示。
+- [`references/training-patterns.md`](references/training-patterns.md)：逐字稿模板、问答卡片及问题覆盖清单。
+
+## Scope · 适用边界
+
+复用准备方式，不绑定某份 RP、教授或固定数据集。教授问题是合理预测；需要近期研究信息时，应使用官方主页与原始论文核实。没有 RP 时，先补充必要内容或使用占位模板。创建 Word、PDF 或 PPT 需要运行环境的对应制作能力。
+
+## Contributing · 改进
+
+欢迎通过 Issue 或 Pull Request 提出更自然的口述结构、问答模板与训练改进。示例请使用虚构或已获授权的材料。
